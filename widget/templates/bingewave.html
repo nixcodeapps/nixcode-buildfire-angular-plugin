@@ -1,0 +1,31 @@
+<div ng-controller="BingewaveCtrl">
+	<h3>Bingewave Home</h3>
+	<!-- <h3 ng-if="show_chats">Chats</h3>
+	<div ng-repeat="m in messages" ng-if="show_chats">
+		<h6>{{m.message}} From <b>{{m.account.first_name}}</b></h6>
+	</div>
+	<form name="chatForm" ng-submit="sendChat()" style="padding: 10px" novalidate>
+		<div class="form-group">
+			<label>Message</label>
+			<input type="text" name="message" class="form-control" ng-model="user.message"
+				placeholder="Enter your message here" ng-required="true">
+		</div>
+		<div class="wrapper">
+			<button type="submit" class="btn btn-primary" ng-if="show_chats">Send</button>
+		</div>
+	</form> -->
+	<button type="button" class="btn btn-primary" ng-click="signup()">Goto signup</button>
+	<iframe allow="camera; microphone" width="100%" height="500" ng-if="show_stream"
+		ng-src="{{trustSrc(stream_url)}}"></iframe>
+	<!-- <button ng-if="show_stream && !stream_started && !broadcast_started" type="button"
+		class="btn btn-primary" ng-click="startStream()">Start Streaming</button>
+	<button ng-if="stream_started && !broadcast_started" type="button" class="btn btn-primary"
+		ng-click="stopStream()">Stop Streaming</button>
+	<button ng-if="show_stream && !stream_started  && !broadcast_started" type="button"
+		class="btn btn-primary" ng-click="startBroadcast()">Start Broadcasting</button>
+	<button ng-if="!stream_started && broadcast_started" type="button" class="btn btn-primary"
+		ng-click="stopBroadcast()">Stop Broadcasting</button> -->
+	<button ng-if="!show_stream" type="button" class="btn btn-primary"
+		ng-click="createEvent()">Create
+		Event</button>
+</div>
