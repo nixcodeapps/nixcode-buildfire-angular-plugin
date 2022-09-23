@@ -1,31 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="socialPluginSettings">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css"/>
 
-    <!--
-    NOTE:
-    1. You can reference the file in SDK via relative path
-    2. The Control and Widget Should NOT share resources. They will be separated in production.
-    3. You may include any JS framework you want with your Widget and Control folders. However, keep in mind
-        to keep you plugin as light weight as possible for performance and transport reasons
-  -->
-
-    <!-- You can load helper.css to use our helper classes.
-    <link href="../../../../styles/helper.css" rel="stylesheet">
-    -->
-
-  <!-- JS -->
-  <script src="../../../../scripts/buildfire.js"></script>
-
-  <!--
+    <!-- JS -->
+    <script src="../../../../scripts/buildfire.js"></script>
     <script src="../../../../scripts/angular/angular.min.js"></script>
+    <script src="../../../../scripts/angular/angular-route.min.js"></script>
+    <script src="../../../../scripts/sortable.min.js"></script>
+    <script src="../../../../scripts/buildfire/components/actionItems/sortableList.js"></script>
     <script src="../../../../scripts/angular/ui-bootstrap.min.js"></script>
-   <script src="../../../../scripts/jquery/jquery-1.11.2.min.js"></script>
-   -->
+    
+     <!-- Load helper.css to use our helper classes.
+    -->
+    <link href="../../../../styles/helper.css" rel="stylesheet">
+    <link href="../../../../styles/siteIcons.css" rel="stylesheet">
+    
+    <!-- build:bundleCSSFiles  -->
+    <link href="assets/css/ng-tags-input.min.css" rel="stylesheet">
+    <link href="assets/css/ng-tags-input.bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/bf_base.css">
+    <link rel="stylesheet" href="assets/css/sortable.css">
+
+    <!-- endbuild -->
+    
+    <!-- build:bundleJSFiles  -->
+    <script src="app.js"></script>
+    <script src="controllers/mainSettingsCtrl.js"></script>
+    <script src="assets/js/ng-tags-input.min.js"></script>
+    <!-- endbuild -->
+
 </head>
-<body>
-<span>Settings - Hello world!</span>
+<body class="scrollable">
+<div class="settings" ng-view></div>
 </body>
 </html>
