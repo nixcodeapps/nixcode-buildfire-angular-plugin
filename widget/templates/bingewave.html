@@ -34,6 +34,7 @@
 	<button ng-if="!stream_started && broadcast_started" type="button" class="btn btn-primary"
 		ng-click="stopBroadcast()">Stop Broadcasting</button> -->
 	<button ng-if="!show_stream" type="button" class="btn btn-primary"
+
 		ng-click="createEventTitle()">{{languages.createEventButton}}</button>
 		<form  ng-if="showNewEventTitle" name="eventForm" ng-submit="createEvent()" style="padding: 10px" novalidate>
 			<div class="form-group">
@@ -52,4 +53,7 @@
 		</form>
 	<!-- <button ng-if="!show_stream" type="button" class="btn btn-primary"
 		ng-click="createEvent()">Create</button> -->
+
+		ng-click="createEvent()">{{languages.createEventButton}}</button>
+
 </div>

@@ -16,7 +16,9 @@ const stringsConfig = {
 				, defaultValue: "Create Event"
 			},
 		}
+		
 	},
+
 	sideThread: {
 		title: "Side Wall labels",
 		subtitle: "Change values to update side wall labels and messages",
@@ -37,6 +39,7 @@ const stringsConfig = {
 		subtitle: "Change values to update modal labels and messages",
 		labels: {}
 	},
+
 
 };
 
