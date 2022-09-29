@@ -24,6 +24,11 @@
 				$scope.loaded = false;
 				$scope.mute = true;
 				$scope.unmute = false;
+
+				$scope.showNewEventTitle = false;
+				$scope.newEventTitle = "";
+				$scope.event = {};
+
 				// buildfire.services.camera.requestAuthorization(null, (err, result) => {
 				//   if (err) return console.error(err);
 
@@ -87,16 +92,23 @@
 				$scope.trustSrc = function (src) {
 					return $sce.trustAsResourceUrl(src);
 				};
+				$scope.createEventTitle = function(){
+					$scope.showNewEventTitle = true;
+				}
 				$scope.createEvent = function () {
 					// console.log(RequestService.getPreferences());
 					var event = {
 						type: 7,
 						organizer_id: RequestService.getPreferences().organizer_id,
-						template_id: RequestService.getPreferences().template_id
+						template_id: RequestService.getPreferences().template_id,
+						event_title: $scope.event.event_title,
+						event_description: $scope.event.event_description,
 					}
+					console.log(event)
 					APIService.create_event(event, function (result) {
 						// console.log(result)
 						if (result.data.status === 'success') {
+							$scope.showNewEventTitle = false;
 							$scope.show_stream = true;
 							$scope.stream_url = result.data.data
 								.webview_video_chat;
@@ -124,6 +136,7 @@
 						console.log(response)
 					});
 
+
 				}
 				$scope.unMuteAll = function () {
 					var event = {
@@ -138,6 +151,23 @@
 					});
 
 				}
+
+
+				}
+				$scope.unMuteAll = function () {
+					var event = {
+						event_id: $scope.event_id,
+						role: "participant"
+					}
+					APIService.unmute_all_participants(event, function (result) {
+						// console.log(result)
+					}, function (response) {
+						$scope.show_stream = false;
+						console.log(response)
+					});
+
+				}
+
 				$scope.getChats = function () {
 					APIService.get_chat_messages($scope.event_id, function (
 						result) {
@@ -251,6 +281,35 @@
 					}
 					else if (response.tag === "languages")
 						WidgetBingewave.SocialItems.formatLanguages(response);
+
+						$scope.languages = WidgetBingewave.SocialItems.languages;
+						console.log($scope.languages, WidgetBingewave.SocialItems.languages)
+
+					   $scope.$digest();
+				});
+				WidgetBingewave.setSettings = function (settings) {
+					// console.log("Set setting")
+					WidgetBingewave.homeTextPermission();
+				}
+				WidgetBingewave.homeTextPermission = function () {
+					buildfire.datastore.get('Social', function (err, result) {
+						if (err) {
+							console.error('App settings -- ', err);
+						} else {
+							if (result && result.data) {
+								WidgetBingewave.SocialItems.appSettings = result.data.appSettings;
+								// console.log(WidgetBingewave.SocialItems);
+								if (WidgetBingewave.SocialItems && WidgetBingewave.SocialItems.appSettings && WidgetBingewave.SocialItems.appSettings.disableHomeText) {
+									$scope.showHomeText = false;
+								} else {
+									$scope.showHomeText = true;
+								}
+							}	
+						}
+						$scope.loaded = true;
+                        $scope.$digest();
+
+
 						console.log(WidgetBingewave.SocialItems.languages.labelHomeText)
 						$scope.languages = WidgetBingewave.SocialItems.languages;
 					   $scope.$digest();
@@ -276,6 +335,7 @@
 						}
 						$scope.loaded = true;
                         $scope.$digest();
+
 
 					});
 					

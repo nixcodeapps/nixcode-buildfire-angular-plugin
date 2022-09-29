@@ -34,5 +34,26 @@
 	<button ng-if="!stream_started && broadcast_started" type="button" class="btn btn-primary"
 		ng-click="stopBroadcast()">Stop Broadcasting</button> -->
 	<button ng-if="!show_stream" type="button" class="btn btn-primary"
+
+		ng-click="createEventTitle()">{{languages.createEventButton}}</button>
+		<form  ng-if="showNewEventTitle" name="eventForm" ng-submit="createEvent()" style="padding: 10px" novalidate>
+			<div class="form-group">
+				<label>Title</label>
+				<input type="text" name="title" class="form-control" ng-model="event.event_title"
+					placeholder="Enter Your Event Title" ng-required="true">
+			</div>
+			<div class="form-group">
+				<label>Description</label>
+				<input type="text" name="description" class="form-control" ng-model="event.event_description"
+					placeholder="Enter Your Event Description" ng-required="true">
+			</div>
+			<div class="wrapper">
+				<button type="submit" class="btn btn-primary">Create</button>
+			</div>
+		</form>
+	<!-- <button ng-if="!show_stream" type="button" class="btn btn-primary"
+		ng-click="createEvent()">Create</button> -->
+
 		ng-click="createEvent()">{{languages.createEventButton}}</button>
+
 </div>

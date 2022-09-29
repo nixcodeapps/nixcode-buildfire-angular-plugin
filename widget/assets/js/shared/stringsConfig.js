@@ -15,23 +15,31 @@ const stringsConfig = {
 				, maxLength: 30
 				, defaultValue: "Create Event"
 			},
-			// labelusername: {
-			// 	title: "Username"
-			// 	, placeholder: "Username"
-			// 	, maxLength: 30
-			// 	, defaultValue: "Username"
-			// },
-			
-			// validationfirstName: {
-			// 	title: "Validate First Name"
-			// 	, placeholder: "Please Enter Your First Name"
-			// 	, maxLength: 30
-			// 	, defaultValue: "Please Enter Your First Name"
-			// },
-		
 		}
 		
 	},
-	
-	
+
+	sideThread: {
+		title: "Side Wall labels",
+		subtitle: "Change values to update side wall labels and messages",
+		labels: {}
+	},
+	members: {
+		title: "Members labels",
+		subtitle: "Change values to update members labels and messages",
+		labels: {}
+	},
+	input: {
+		title: "Input Dialog labels",
+		subtitle: "Change values to update input dialog labels and messages",
+		labels: {}
+	},
+	modal: {
+		title: "Modal labels",
+		subtitle: "Change values to update modal labels and messages",
+		labels: {}
+	},
+
+
 };
+
