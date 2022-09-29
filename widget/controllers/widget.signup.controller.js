@@ -7,6 +7,7 @@
             let timerDelay = null;
             $scope.show_stream = false;
             $scope.stream_url = '';
+           
             // buildfire.services.camera.requestAuthorization(null, (err, result) => {
             //   if (err) return console.error(err);
             
@@ -32,7 +33,7 @@
                 console.log("clicked");
                 Location.go('#/bingewave');
             }
-                
+           
                
                 $scope.trustSrc = function(src) {
                   return $sce.trustAsResourceUrl(src);

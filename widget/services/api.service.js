@@ -9,6 +9,9 @@
     function APIService($rootScope, RequestService, $location) {
         var service = {};        
         //AccountCtrl services
+        service.get_my_profile = get_my_profile;
+        service.unmute_all_participants = unmute_all_participants;
+        service.mute_all_participants = mute_all_participants;
         service.create_event = create_event;
         service.start_stream = start_stream;
         service.stop_stream = stop_stream;
@@ -19,6 +22,32 @@
         service.register = register;
  
         return service;
+        function get_my_profile(param, callback, fallback) {
+            RequestService.CallAPI3(param, 'accounts/me', function (result) {
+                if (result) {
+                    callback(result);
+                }
+            }, fallback, 'GET');
+        }
+        function unmute_all_participants(param, callback, fallback) {
+            RequestService.CallAPI3(param, 'events/' + param.event_id + '/setUserAudioUnmute', function (result) {
+                if (result) {
+                    // $location.path('/register');
+                    callback(result);
+                }
+            }, fallback);
+        }
+
+
+        function mute_all_participants(param, callback, fallback) {
+            RequestService.CallAPI3(param, 'events/' + param.event_id + '/setUserAudioMute', function (result) {
+                if (result) {
+                    // $location.path('/register');
+                    callback(result);
+                }
+            }, fallback);
+        }
+
 
         function send_chat_messages(param, callback, fallback) {
             RequestService.CallAPI3(param, 'events/' + param.event_id + '/messages', function (result) {
