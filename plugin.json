@@ -1,11 +1,11 @@
 {
   "author": "Nixcode",
   "pluginName": "Bingewave AngularJs",
-  "pluginDescription": "Bingewave Live Stream plugin",
-  "keywords": "live stream, video chat, stream, live, video, audio, clubhouse, chat room",
-  "supportEmail": "support@nixcodeapps.com",
-  "supportSite": "https://docs.nixcode.io/en/articles/6577617-bingewave-live-stream-plugin",
-  "pluginIcon": "BingeWavePlugin.png",
+  "pluginDescription": "Bingewave plugin",
+  "keywords": "communication,social,wall,messaging,message,group,conversation,chat",
+  "supportEmail": "support@buildfire.com",
+  "supportSite": "https://learn.appdocumentation.com/en/articles/5128512-how-to-use-the-community-wall-plugin",
+  "pluginIcon": "icon.png",
   "control": {
     "content": {
       "enabled": true

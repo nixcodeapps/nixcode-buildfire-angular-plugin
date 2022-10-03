@@ -384,7 +384,6 @@
 					});
 				}
 				$scope.showMoreOptions = function (event) {
-					console.log(event)
 					WidgetBingewave.modalPopupWidgetBingewaveId = event.id;
 					WidgetBingewave.SocialItems.authenticateUser(null, (err, user) => {
 						if (err) return console.error("Getting user failed.", err);
