@@ -13,6 +13,7 @@
         service.unmute_all_participants = unmute_all_participants;
         service.mute_all_participants = mute_all_participants;
         service.create_event = create_event;
+        service.get_all_events = get_all_events;
         service.start_stream = start_stream;
         service.stop_stream = stop_stream;
         service.start_broadcast = start_broadcast;
@@ -95,6 +96,15 @@
                 }
             }, fallback);
         }
+
+        function get_all_events(param, callback, fallback) {
+            RequestService.CallAPI3(param, 'events', function (result) {
+                if (result) {
+                    callback(result);
+                }
+            }, fallback, 'GET');
+        }
+
 
         function start_stream(param, callback, fallback) {
             RequestService.CallAPI3(param, 'events/' + param + '/startStream', function (result) {

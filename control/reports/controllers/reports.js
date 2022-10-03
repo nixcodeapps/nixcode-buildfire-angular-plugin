@@ -12,6 +12,7 @@ app.controller('ReportsCtrl', ['$scope', function ($scope) {
     }
 
     function loadTable(event) {
+        console.log(event)
         searchTableHelper = new SearchTableHelper("searchResults", 'reports_' + event.wid, searchTableConfig);
         searchTableHelper.search();
         searchTableHelper.onCommand('showText', (obj, tr) => {

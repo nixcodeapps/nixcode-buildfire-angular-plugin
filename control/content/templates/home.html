@@ -1,28 +1,28 @@
 <div class="padded">
     <div  class="item row">
-        <div class="col-xs-12 text-right export-dropdown-group pull-right">
+        <!-- <div class="col-xs-12 text-right export-dropdown-group pull-right">
             <div class="btn-group margin-bottom-fifteen" dropdown>
                 <button ladda="ContentHome.exportingThreads" ng-click="ContentHome.exportMainWallPosts()" ng-disabled="ContentHome.exportingThreads"  data-style="zoom-in" id="export-button" type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle >
                     Export All Posts and Comments to CSV
                 </button>
             </div>
-        </div>
+        </div> -->
     </div>
 
-    <div class="empty-state" ng-if="!ContentHome.posts.length && !ContentHome.loading">
+    <!-- <div class="empty-state" ng-if="!ContentHome.posts.length && !ContentHome.loading">
         <h4 class="text-center" style="font-size:16px; line-height:22px;">Looks like you do not have any posts yet. To add one, you can do so through the emulator to your right.</h4>
         <br>
     </div>
     <div class="empty-state" ng-if="ContentHome.loading">
         <h4 class="text-center" style="font-size:16px; line-height:22px;">Loading...</h4>
         <br>
-    </div>
+    </div> -->
     <!-- <div class="">
         <h4 class="text-center" style="font-size:16px; line-height:22px;">Main topic subject</h4>
         <textarea class="form-control" ui-tinymce="ContentHome.descriptionWYSIWYGOptions"
         ng-model="ContentHome.descriptionWYSIWYG" placeholder="WYSIWYG" ng-change="ContentHome.setWYSIWYG()"></textarea>
     </div> -->
-    <div
+    <!-- <div
         style="overflow-y:auto;" class="infinite-scroll-parent">
         <div class="wrapper social-plugin" infinite-scroll-distance="0"
             data-infinite-container=".infinite-scroll-parent"
@@ -63,11 +63,11 @@
                     <div class="hes-gallery post-images" data-wrap="true" data-img-count="{{post.images.length}}" ng-init="initHesGallery()">
                         <img ng-repeat="image in post.images" src="https://czi3m2qn.cloudimg.io/v7/{{image}}" data-alt="Post image">
                     </div>
-                </div>
+                </div> -->
                 <!-- <div class="plugin-banner clearfix margin-bottom-fifteen" ng-if="post.imageUrl" ng-init="setupImageList(post)">
                     <bf-image-list ng-if="post.imageListId" id="{{post.imageListId}}" token="czi3m2qn"></bf-image-list>
                 </div> -->
-                <div class="social-footer">
+                <!-- <div class="social-footer">
                     <div class="status flex">
                         <a class="text-danger padded-sm caption" ng-click="ContentHome.banUser(post.userId, post.id, getUserName(post.userDetails))">Ban User</a>    
                         <a class="text-danger padded-sm caption" ng-click="ContentHome.deletePost(post.id)">Delete Post</a>
@@ -96,11 +96,11 @@
                         <div class="copy margin-bottom-five">
                             <p class="margin-zero" ng-bind-html="ContentHome.util.injectAnchors(comment.comment) | newLine"></p>
                         </div>
-                        <!-- <div class="plugin-banner margin-bottom-fifteen" ng-if="comment.imageUrl.length > 0">
+                       <div class="plugin-banner margin-bottom-fifteen" ng-if="comment.imageUrl.length > 0">
                             <div ng-repeat="imageUrl in comment.imageUrl" class="plugin-slide text-center">
                                 <img  load-image="16x9" data-final-src="{{imageUrl | resizeImage : 555 : 337}}">
                             </div>
-                        </div> -->
+                        </div>
                         <div class="hes-gallery post-images" data-wrap="true" ng-show="comment.imageUrl.length" data-img-count="{{comment.imageUrl.length}}" ng-init="initHesGallery()">
                             <img ng-repeat="imageUrl in comment.imageUrl" src="https://czi3m2qn.cloudimg.io/v7/{{imageUrl}}" data-alt="Post image">
                         </div>
@@ -109,7 +109,7 @@
                             <a class="text-danger padded-sm caption padding-left-zero" ng-click="ContentHome.deleteComment(post, comment)">Delete Comment</a>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

@@ -272,7 +272,7 @@
                     });
                     return deferred.promise;
                 },
-                reportPost: function (data) {
+                reportEvent: function (data) {
                     buildfire.publicData.get('reports_' + data.wid, (err, result) => {
                         if (!result.data.length)
                             buildfire.publicData.save([{ ...data }], 'reports_' + data.wid, () => { });

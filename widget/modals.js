@@ -67,8 +67,8 @@
             $scope.socialItemUserId=Info.socialItemUserId;
             $scope.languages = Info.languages;
             console.log("INFO LANGUAGES", Info.languages)
-            let reportPost = Info.languages.reportPost;
-            MoreOptionsPopup.options.push(reportPost);
+            let reportEvent = Info.languages.reportEvent;
+            MoreOptionsPopup.options.push(reportEvent);
 
             $scope.ok = function (option) {
                 $modalInstance.close(option);
